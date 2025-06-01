@@ -3,6 +3,11 @@ const nextConfig = {
     basePath: "/meshroom",
     assetPrefix: "/meshroom",
     trailingSlash: true,
+    output: "export", // ✅ required for static export
+    reactStrictMode: true,
+    images: {
+        unoptimized: true, // ✅ required for static hosting if you're using <Image />
+    },
     webpack: (config) => {
         config.externals.push({
             "utf-8-validate": "commonjs utf-8-validate",
